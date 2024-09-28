@@ -1,0 +1,25 @@
+file-input {
+    display: none; /* Hide the actual file input */
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 8px 12px;
+    background: none;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .upload-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  input[type="file"] {
+    color: transparent;
+  }
