@@ -1,10 +1,13 @@
 
 import MainAccordian from '../../../components/MainAccordian'
 import MainCategoryForm from '../../../components/MainCategoryForm'
+import ProductForm from '../../../components/ProductForm'
 import SubCategoryForm from '../../../components/SubCategoryForm'
 import SuperCategoryForm from '../../../components/SuperCategoryForm'
 
 const AddProduct = () => {
+
+  
   return (
     <div className="card">
     <div className="card-body">
@@ -57,7 +60,17 @@ const AddProduct = () => {
         </div>
 
         <div className="tab-pane fade active show" id="bordered-justified-contact" role="tabpanel" aria-labelledby="contact-tab">
-sdfg
+        <div className="row">
+              <div className="col-4">  <MainAccordian/></div>
+
+              <div className="col-8"> 
+                <div className="row">
+                <div className="col-12"><ProductForm/> </div>
+                <div className="col-12 mt-4"> </div>
+                </div>
+                
+               </div>
+         </div>
         </div>
 
       </div>

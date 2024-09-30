@@ -25,7 +25,6 @@ const SubCategoryForm = () => {
         setSuperCategory(values) //now set the updated array 
     }
 
-
     const handleInputChange = (index,event)=>{
         const values =[...superCategory];
 
@@ -81,14 +80,12 @@ const SubCategoryForm = () => {
 
     }
 
-
-
     const gettingSuperCategory = async()=>{
 
         try {
-          const response =  axios.get(`${BASE_URL}/get-super-category`, getConfig(accessToken));
-          setFetchSuperCategory((await response).data.data);
-          console.log(response);
+          const response = await axios.get(`${BASE_URL}/get-super-category`, getConfig(accessToken));
+          setFetchSuperCategory(response.data.data);
+        //   console.log(response);
           
         } catch (error) {
             console.log(error);
@@ -99,10 +96,6 @@ const SubCategoryForm = () => {
     useEffect(()=>{ 
         gettingSuperCategory()
     },[])
-
-
-
-
 
 
   return (
@@ -123,7 +116,7 @@ const SubCategoryForm = () => {
                     <option>select Super Category</option>
                     {
                       fetchsuperCategory.map((item)=>(
-                        <option key={item.id} value={item.main_category_id} id={item.id}>{item.sup_cname}</option>
+                        <option key={item.id} value={item.id} id={item.id}>{item.sup_cname}</option>
                       ))
                     }
                    

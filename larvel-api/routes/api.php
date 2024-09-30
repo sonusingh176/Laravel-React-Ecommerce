@@ -32,6 +32,10 @@ Route::middleware('auth:sanctum')->group(function () {
    Route::post('save-super-category',[ProductController::class, 'saveSuperCategory'])->name('saveSuperCategory');
    Route::get('get-super-category',[ProductController::class, 'getSuperCategory'])->name('getSuperCategory');
    Route::post('save-sub-category',[ProductController::class,'subcategory'])->name('save-sub-category');
+   Route::get('get-sub-category',[ProductController::class, 'getSubCategory'])->name('getSubCategory');
+   Route::post('save-specification',[ProductController::class, 'saveSpecification'])->name('save-specification');
+  
+   Route::get('get-specifications',[ProductController::class, 'getSpecifications'])->name('get-specifications');
 
 
 });

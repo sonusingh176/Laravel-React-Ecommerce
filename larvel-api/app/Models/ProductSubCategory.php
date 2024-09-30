@@ -17,7 +17,7 @@ class ProductSubCategory extends Model
    ];
 
    public function product_super_categories(){
-    return $this->belongsToMany(ProductSuperCategory::class,'super_sub_pivot','sub_category_id','super_category_id');
+    return $this->belongsToMany(ProductSuperCategory::class,'super_sub_pivot','super_category_id','sub_category_id',);
    }
 
 

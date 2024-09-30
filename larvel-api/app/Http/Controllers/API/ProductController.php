@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductCategoryRequest;
 use App\Http\Requests\ProductSuperCategoryRequest;
 use App\Models\ProductMainCategory;
+use App\Models\ProductSpecification;
 use App\Models\ProductSubCategory;
 use App\Models\ProductSuperCategory;
 use Illuminate\Http\Request;
@@ -145,5 +146,50 @@ class ProductController extends Controller
             'message' =>'add',
         ]);
 
+    }
+
+    public function getSubCategory(Request $request){
+        $getdata=ProductSubCategory::all();
+
+        return response()->json([
+            'data' => $getdata,
+        ]);
+    }
+
+    public function saveSpecification(Request $request){
+
+        $validated = $request->validate([
+            'name' => 'required'
+        ]);
+
+        if($validated){
+            $spf_name = $request->name;
+
+            // Check if the specification already exists
+            $existingSpecification =ProductSpecification::where('attributes_name',$spf_name)->first();
+
+            if( $existingSpecification ){
+                return response()->json([
+                    'message' => 'Specification already exists'
+                ], 400);
+            }
+
+            $newSpecification = ProductSpecification::create([
+                'attributes_name' =>  $spf_name,
+            ]);
+        }
+
+        return response()->json([
+            'data' =>$newSpecification,
+            'message'=>'Specification added successfully'
+        ]);
+    }
+
+    public function getSpecifications(){
+        $getSpcf= ProductSpecification::all();
+
+        return response()->json([
+            'data' =>$getSpcf,
+        ]);
     }
 }

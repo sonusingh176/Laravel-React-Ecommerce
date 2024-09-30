@@ -23,3 +23,28 @@ file-input {
   input[type="file"] {
     color: transparent;
   }
+
+  /* -------------------------- */
+
+
+  /* .tabs:not(:last-child){
+border-right: 1px solid black;
+  }
+
+  .active-tabs{
+    background: white;
+    border-bottom :1px solid transparent;
+  }
+
+  .active-tabs::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100%+2px);
+    height: 5px;
+    background: rgb(29, 29, 197);
+   
+  } */
